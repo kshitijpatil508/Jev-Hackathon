@@ -18,6 +18,10 @@
 >   may read Git state but not change it; when they think a commit/pull/push is due they tell the human
 >   and list it under "Human Decisions Required" in their handoff. Mirrored in AGENTS.md §7.
 
+> - 2026-10-15 18:48 IST (Claude, approved by Praveen): brainstorming suggestions go in their own folder,
+>    (one file per agent per session), with a one-line
+>   pointer in IDEAS.md. This lets agents brainstorm in parallel without editing the same file.
+
 ## 1. Context
 
 We are participating in a **Jev Hackathon**, focused on building a solution that assists with the **Software Development Life Cycle (SDLC)**.
@@ -110,7 +114,7 @@ Responsibilities of these files:
 - Technologies, constraints, submission requirements, and judging criteria.
 - Distinguish confirmed requirements from assumptions.
 
-**IDEAS.md**
+**IDEAS.md** (index; full write-ups live in .hackathon/ideas/)
 - Suggestions from every participating LLM.
 - Feasibility analysis, trade-offs, and recommendations.
 - Reviews or disagreements from other agents.

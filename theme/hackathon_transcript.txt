@@ -1,0 +1,61 @@
+Um, I'll go through quickly the rules. There's only three. Um, I'll go through how the voting will
+work. Basically there is a rubric where you will vote for your your favorite team for each 60 minutes
+to produce your solution. Eight minutes each to each team to present voting and then we will
+announce the winner. So our teams we have Legends of Avalero product Jason Guest and Brian
+Kinney. We have some good old pals. Um, if you'd like to request a name change that's
+totally fine. We're more creative than others. We have friends of TIE, some promising rookies,
+and Ski Dresden. Um, I'm not rooting for anyone in particular, but my favorite name may be Ski
+Dresden or the record. Um, so our first one is Agentec SDLC. So and to frame this as well,
+the themes, this means that your solution, you have to choose one of these three themes.
+Um, and build to satisfy that use case. And so our first use case is Agentec SDLC using
+an Agentec solution, a JET based solution across somewhere in the software development
+lifecycle. So, um, that's sprints, code management, blah, blah, you sell the things there. Um,
+and two ideas just for you are. So first of all, a browser based integration testing.
+Um, so you can kind of see this animation playing out here. JET is choosing kind of the
+correct buttons, um, and moving through this to perform the integration test in a cheaper and
+more accelerated fashion. Um, and then maybe across the project management lifecycle, um,
+you might do some feature complexity ranking, um, as you implement to, to kind of decide,
+like, you know, can an agent just take care of this, like small color change or something,
+or do we need more security review, like sort of tiering the, um, the feature complexity
+of something. Um, the second theme is lead acquisition. Um, so, um, pretty straightforward.
+So, of course, lead acquisition being the process of identifying, qualifying perspective
+customers for business services, uh, usually against an ICP. Um, and so you can see this
+animation here. I've got something where it's like, you know, um, we have a couple of potential
+leads, a couple of companies. Um, and then we're going to compare them to an ICP under
+the hood and we're going to score them using Jeff. Um, so that's one example there. And then
+our final theme is, and this one's a bit broader, media signals. So useful insights to ride from
+anywhere across the web, social platforms, news, um, to produce valuable information. So, um,
+for instance, like, are we going to be able to look at Twitter? Um, or rather X to predict
+stock price increases, or to kind of historically look at it and see where it matches up. Like
+sometimes Elon Musk says something on Twitter and then Tesla goes up or down. And it's like,
+you know, can we use Jeff to say, okay, this did or did not actually affect the stock price
+historically. Um, and something that's sort of pertinent to us is, okay, across the, across
+the board. Um, you know, are we seeing an uptick in activity for certain categories? Like,
+you know, are people talking about Jevil on social media, which they definitely are,
+if you've been on LinkedIn in the past two weeks. And so we want to see that trend emerge
+and know that that's something that we need to be talking to our customers about, um, or implementing.
+So those are our three themes. We have a genetic SCLC, lead acquisition and media signals. Um,
+rules. And I'll pause for questions before we go into the hacking, because I know there
+might be some number one, and this is the obvious, your solution must be sitting around
+types of AI's Jeff system one model. I know that's like not an objective criteria,
+but I think you all get the point. That is the point of this hackathon.
+You'll have exactly one hour to build. So when I kick off, we'll set a timer.
+Everyone will go into their breakout rooms, um, and we'll return at 16 minutes.
+And then at the hour mark, each team will have eight minutes to present the order
+of presentations is unfortunately the ones you see on this slide. Um, so whatever you see
+here will be the order in which you go. Finally, this is how you will grade each other. I will not
+be voting because, um, well, I guess I can't vote. Actually, I haven't thought about that, but
+there are five questions and you will rank each team with respect to these questions.
+So you can take a look now. Um, I'll read through them quickly. So which solution offers the
+biggest ROI with respect to time and money that you saw, which team had the best presentation.
+So this hackathon is not only about what you're able to build, but the quality of your
+demo, how engaging were you, how organized was it, how clear was it, um, category fit. So,
+you know, this one can be this one, maybe a little ambiguous, maybe a couple teams fit
+their category really well. Um, so I'm expecting some variability there,
+but maybe a team produces something that doesn't really fit any one of the categories
+or doesn't really nail the use case. So that's really important here.
+Um, because we're usually building against a use case scalability. So, you know,
+is this something that we could take a production? Is it something that could take more users?
+That's obviously always important. And then I leave it pretty open-ended,
+which team generally speaking, do you think other than your own deserves to win?
+you can use another LLM within the app but it must be Jev based. You can request the OpenAIAPI key if needed

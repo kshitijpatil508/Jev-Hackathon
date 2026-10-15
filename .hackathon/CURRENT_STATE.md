@@ -1,11 +1,12 @@
 # CURRENT STATE
 
-_Last updated: 2026-10-15 by Codex (Git publish session: 18:22 IST)_
+_Last updated: 2026-10-15 18:48 IST by Claude_
 
-**Phase:** 1 — Workspace prepared and reviewed. Waiting for the hackathon theme.
-**Latest handoff:** [Codex Git publication](handoffs/2026-10-15_1822_codex_git-publish.md)
-**Latest next-agent prompt:** [Copy-paste prompt](prompts/2026-10-15_1822_codex_next.md)
+**Phase:** 2 — Theme announced; ideas proposed; **awaiting human selection** (1-hour build clock).
+**Latest handoff:** [Claude theme ideas](handoffs/2026-10-15_1848_claude_theme-ideas.md)
+**Latest next-agent prompt:** [Copy-paste prompt](prompts/2026-10-15_1848_claude_next.md)
 **Latest review:** [Findings and validation](reviews/2026-10-15_1816_codex_review-workspace.md)
+**Theme & rules:** [THEME.md](THEME.md) · **Ideas:** [IDEAS.md](IDEAS.md) → [Claude's write-up](ideas/2026-10-15_1848_claude_theme-ideas.md)
 
 ## Working
 - Collaboration structure in place (AGENTS.md, CLAUDE.md, README.md, `.hackathon/`, `src/`, `tests/`).
@@ -23,6 +24,7 @@ _Last updated: 2026-10-15 by Codex (Git publish session: 18:22 IST)_
 - No runtime or API validation yet.
 
 ## Needs attention next
+0. Humans pick an idea (Claude recommends A: SDLC Triage Desk), then smoke-test the Jev API (5 min).
 1. When the theme is announced: paste it into `THEME.md`, then brainstorm in `IDEAS.md` (AGENTS.md §2).
 2. Confirm what `JEV_API_KEY` is for.
 3. Teammates can use the shared repository; future Git writes remain human-directed through Codex.
