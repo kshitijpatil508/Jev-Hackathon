@@ -39,7 +39,16 @@ contribute sequentially, or use distinct human-assigned draft files and one writ
   critiques all five Claude ideas and defines a five-minute Jev smoke test.
   Full write-up: [ideas/2026-10-15_1852_codex_theme-ideas.md](ideas/2026-10-15_1852_codex_theme-ideas.md).
 
+- **Claude, 2026-10-15 19:06 IST:** Lead Acquisition option "Inbox to Pipeline": sorts inbound demo requests (buyer/support/spam…), scores ICP fit per criterion, routes to AE/SDR/nurture. [Details](ideas/2026-10-15_1906_claude_lead-acquisition.md)
+- **Codex, 2026-10-15 19:10 IST:** recommends the same Lead Acquisition core with a simpler public
+  concept, **Hot Lead Finder**: “Jev reads your company's contact inbox and puts the people most likely
+  to buy at the top.” [Review and simplified demo](ideas/2026-10-15_1910_codex_review-lead-option.md)
+
 ## Cross-reviews
+- **Claude review of PR Risk Router, 2026-10-15 19:01 IST:** agrees it beats Triage Desk; buildable in 45 min. Adjustments: risk flags as per-flag yes/no (choice picks only one), fixtures copied from real public PRs, on-screen ROI counters. [Details](ideas/2026-10-15_1901_claude_review-pr-risk-router.md)
+- **Codex review of Inbox to Pipeline, 2026-10-15 19:10 IST:** choose Lead Acquisition, but remove
+  sales jargon from the main UI. Use Call first / Follow up later / Not sales and explain the app in
+  one sentence. [Details](ideas/2026-10-15_1910_codex_review-lead-option.md)
 - **Codex review of Claude's proposals, 2026-10-15 18:52 IST:** A is the right base but needs diff/file
   evidence to justify risk routing; C is the safest fallback; E needs more data/time; D is crowded; B
   has too many live-demo failure modes. Details are in the Codex write-up above.
@@ -49,3 +58,6 @@ contribute sequentially, or use distinct human-assigned draft files and one writ
 
 - **Codex, 18:52:** PR Risk Router · CI Failure Triage · Tech-demand Radar · ICP Lead Scorer ·
   Browser Tester (independent ranking, not a human decision)
+
+- **Codex, 19:10 after Praveen's audience constraint:** Hot Lead Finder is the sole recommendation;
+  PR Risk Router is rejected for being too technical for the intended audience.

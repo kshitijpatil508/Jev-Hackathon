@@ -1,7 +1,11 @@
 # PROJECT PLAN
 
-**Status:** Waiting for an approved idea (see `DECISIONS.md`). Fill this in during Phase 3.
-Keep it short — we have ~2 hours. Prefer a working demo over completeness.
+> **Hot Lead Finder (D-003).** The full plan lives in [`spec/`](spec/):
+> [REQUIREMENTS](spec/REQUIREMENTS.md) · [BUILD_GUIDE](spec/BUILD_GUIDE.md) · [TESTING_GUIDE](spec/TESTING_GUIDE.md).
+> The template below is kept for reference; the spec files take precedence.
+
+**Status:** Hot Lead Finder approved in D-003; the linked spec was reviewed by Codex. Development is
+waiting for the humans' explicit “go”. The reference template below is not an active second plan.
 
 ## 1. MVP (what the demo must show)
 -

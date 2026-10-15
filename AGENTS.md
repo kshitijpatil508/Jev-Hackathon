@@ -124,6 +124,7 @@ introPrompt.txt      ← master brief and revision log; mirror approved workflow
   CURRENT_STATE.md   ← short living status + pointer to latest handoff
   handoffs/          ← timestamped agent handoffs (template in README.md; legacy files preserved)
   prompts/           ← matching copy-paste prompts, linked from each handoff
+  spec/              ← approved product's REQUIREMENTS, BUILD_GUIDE, TESTING_GUIDE (contract for builders)
   ideas/             ← one brainstorming file per agent (YYYY-MM-DD_HHMM_<agent>_<topic>.md), indexed in IDEAS.md
   reviews/           ← code review findings (template in README.md)
 src/                 ← application code

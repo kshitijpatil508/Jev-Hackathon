@@ -22,6 +22,10 @@
 >    (one file per agent per session), with a one-line
 >   pointer in IDEAS.md. This lets agents brainstorm in parallel without editing the same file.
 
+> - 2026-10-15 19:17 IST (Claude, approved by Praveen): once an idea is selected, its requirements, phase-by-phase
+>   build guide and testing guide live in `.hackathon/spec/` (REQUIREMENTS.md, BUILD_GUIDE.md,
+>   TESTING_GUIDE.md); PROJECT_PLAN.md points there.
+
 ## 1. Context
 
 We are participating in a **Jev Hackathon**, focused on building a solution that assists with the **Software Development Life Cycle (SDLC)**.
