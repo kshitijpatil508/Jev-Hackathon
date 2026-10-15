@@ -14,7 +14,7 @@ acceptance check and any blocker/next action in Notes. All file paths are relati
 | T-002 | Brainstorm ideas in IDEAS.md | — | TODO | .hackathon/IDEAS.md (append) | T-001 | No (shared file) | Sequential contributions; parallel drafts only in distinct human-assigned files |
 | T-003 | Humans select idea → DECISIONS.md | Humans | TODO | .hackathon/DECISIONS.md | T-002 | No | |
 | T-004 | Write PROJECT_PLAN + break down tasks | — | TODO | .hackathon/PROJECT_PLAN.md, .hackathon/TASK_BOARD.md | T-003 | No | Include acceptance checks and development authorization |
-| T-005 | Connect Git repo, commit workspace, and push | Codex | IN PROGRESS | .git, README.md, .hackathon/TASK_BOARD.md, .hackathon/CURRENT_STATE.md, .hackathon/DECISIONS.md, .hackathon/handoffs/2026-10-15_1822_codex_git-publish.md, .hackathon/prompts/2026-10-15_1822_codex_next.md | — | No | Human authorized push to kshitijpatil508/Jev-Hackathon; preserve remote history and exclude secrets |
+| T-005 | Connect Git repo, commit workspace, and push | Codex | DONE | Released | — | No | [Handoff](handoffs/2026-10-15_1822_codex_git-publish.md); workspace published and remote SHA verified; .env excluded |
 | T-006 | Review workspace and reconcile updated collaboration workflow | Codex | DONE | Released; changed files listed in handoff | T-000 | No | [Handoff](handoffs/2026-10-15_1816_codex_workspace-review.md); protocol and document-link checks passed |
 | T-007 | Record Codex-only Git operator rule | Claude | DONE | Released | T-006 | No | [Handoff](handoffs/2026-10-15_1820_claude_git-operator-rule.md) |
 

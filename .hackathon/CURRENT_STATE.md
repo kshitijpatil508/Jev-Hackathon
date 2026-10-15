@@ -12,19 +12,20 @@ _Last updated: 2026-10-15 by Codex (Git publish session: 18:22 IST)_
 - `.gitignore` excludes `.env`; `.env.example` lists `JEV_API_KEY`.
 - Timestamped handoffs/reviews and separate prompts adopted across the master brief and templates.
 - File claims, one shared writer during parallel work, and interrupted-session recovery documented.
-- T-006 complete. T-005 publication in progress. Legacy handoff 001 is preserved as history.
+- T-005 and T-006 complete; no active claims. Legacy handoff 001 is preserved as history.
 - Local main tracks origin/main at the approved repository; existing LICENSE and connection-test.md preserved.
 - `.env` exclusion verified with git check-ignore; `.env.example` is eligible for version control.
+- Workspace published to origin/main; remote SHA matched local c5a6cd2 after merging the concurrent
+  remote .gitignore commit. This completion record is a follow-up documentation commit.
 
 ## Incomplete / not started
 - No theme, no idea, no application code.
-- Initial workspace commit and push pending completion of T-005.
 - No runtime or API validation yet.
 
 ## Needs attention next
 1. When the theme is announced: paste it into `THEME.md`, then brainstorm in `IDEAS.md` (AGENTS.md §2).
 2. Confirm what `JEV_API_KEY` is for.
-3. Codex completes the authorized workspace commit and push (T-005).
+3. Teammates can use the shared repository; future Git writes remain human-directed through Codex.
 
 ## Latest important decisions
 - D-000: human-orchestrated, file-based collaboration workflow.
