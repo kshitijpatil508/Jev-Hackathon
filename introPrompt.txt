@@ -1,0 +1,440 @@
+# MASTER PROMPT — MULTI-LLM HACKATHON COLLABORATION SYSTEM
+
+> This is the master prompt. When the humans approve a change to how we work, update the affected
+> section here AND in AGENTS.md, then add a line to the revision log below.
+>
+> **Revision log**
+> - 2026-10-15 18:20 IST (Claude, approved by Praveen): handoffs and reviews use timestamped file
+>   names (YYYY-MM-DD_HHMM_<agent>_<topic>.md); next-agent prompts moved to their own folder
+>   `.hackathon/prompts/`; working changes must be mirrored in this file.
+>   STATUS: initially applied here only; adopted across operating instructions and templates by Codex
+>   in T-006. Existing numbered files remain valid historical records.
+> - 2026-10-15 18:16 IST (Codex, human-assigned workspace review): reconciled timestamped artifacts
+>   and separate prompts; clarified shared-writer ownership, interrupted claims, explicit current-pair
+>   pointers, and concise validation evidence. Scheduling suggestions in README remain proposals.
+>   Times on older entries are preserved as recorded; use current-state pointers for the active pair.
+> - 2026-10-15 18:20 IST (Claude, approved by Praveen): Codex is the only Git operator. Only Codex runs Git write
+>   commands (init, add, commit, branch, pull, push), and only on a human's instruction. Other agents
+>   may read Git state but not change it; when they think a commit/pull/push is due they tell the human
+>   and list it under "Human Decisions Required" in their handoff. Mirrored in AGENTS.md §7.
+
+## 1. Context
+
+We are participating in a **Jev Hackathon**, focused on building a solution that assists with the **Software Development Life Cycle (SDLC)**.
+
+The hackathon lasts approximately **2 hours**, and our team consists of **2 human participants**.
+
+We have access to four AI assistants:
+- OpenAI Codex
+- Claude (using Claude Cowork)
+- Two additional AI assistants operated by my teammate
+
+The exact hackathon theme, requirements, and constraints will be provided when the event begins.
+
+**Your immediate task is to prepare our local project workspace for an efficient, human-directed, multi-LLM development workflow. Do not invent the theme or start implementing a hackathon solution before we receive it.**
+
+## 2. Core Collaboration Philosophy
+
+We want all four LLMs to function as interchangeable software engineers collaborating on the same project.
+
+This is NOT an autonomous multi-agent orchestration system.
+
+**The two human participants are the orchestrators.**
+
+I will manually switch between LLMs and instruct each one when to begin working, when to review another model's work, and when to stop.
+
+For example:
+
+1. I ask Codex to analyze a problem, make suggestions, and document its findings.
+2. Codex completes its work and creates a handoff.
+3. I open Claude Cowork and instruct Claude to examine Codex's work and handoff.
+4. Claude independently reviews the work, suggests improvements, makes approved or appropriately scoped changes, and records its own handoff.
+5. I return to Codex and ask it to review Claude's work and continue.
+6. This process can continue with any of the four LLMs in any order.
+
+Every agent must be able to understand the project without relying on its own previous chat history.
+
+**The shared local files and Git repository are the persistent source of truth.**
+
+No agent should assume it is permanently assigned a specific role. Any agent can plan, code, test, review, debug, document, or improve the application.
+
+## 3. Phase One — Workspace Preparation (DO THIS NOW)
+
+Before the hackathon theme is announced, create a lightweight collaboration structure inside the local project folder.
+
+Suggested structure:
+
+```text
+project/
+│
+├── AGENTS.md
+├── CLAUDE.md
+├── README.md
+│
+├── .hackathon/
+│   ├── THEME.md
+│   ├── DECISIONS.md
+│   ├── IDEAS.md
+│   ├── PROJECT_PLAN.md
+│   ├── TASK_BOARD.md
+│   ├── CURRENT_STATE.md
+│   │
+│   ├── handoffs/
+│   │   └── README.md
+│   │
+│   ├── prompts/
+│   │   └── README.md
+│   │
+│   └── reviews/
+│       └── README.md
+│
+├── src/
+└── tests/
+```
+
+Responsibilities of these files:
+
+**AGENTS.md**
+- Common operating instructions for every LLM.
+- Mandatory context-reading procedure.
+- Planning, development, review, and handoff protocols.
+- Rules for modifying shared files and collaborating safely.
+
+**CLAUDE.md**
+- Claude-specific entry point.
+- Direct Claude to follow the common instructions in AGENTS.md.
+- Do not duplicate conflicting instructions.
+
+**THEME.md**
+- Official hackathon theme and requirements once announced.
+- Technologies, constraints, submission requirements, and judging criteria.
+- Distinguish confirmed requirements from assumptions.
+
+**IDEAS.md**
+- Suggestions from every participating LLM.
+- Feasibility analysis, trade-offs, and recommendations.
+- Reviews or disagreements from other agents.
+
+**DECISIONS.md**
+- Decisions approved by the human participants.
+- Selected project idea.
+- Approved architecture and technology choices.
+- Reasons for significant decisions.
+- Explicitly rejected alternatives where relevant.
+
+**PROJECT_PLAN.md**
+- Overall architecture.
+- Implementation phases.
+- Proposed task assignments.
+- Integration strategy.
+- Definition of done.
+
+**TASK_BOARD.md**
+- Tasks, owners, statuses, and dependencies.
+- Identify which tasks can safely run in parallel.
+- Track blockers and pending reviews.
+
+**CURRENT_STATE.md**
+- Concise, continuously updated project status.
+- What works, what is incomplete, and what needs attention next.
+- The latest important decisions and handoffs.
+
+**handoffs/**
+- One file per session, named YYYY-MM-DD_HHMM_<agent>_<topic>.md (IST, UTC+05:30, 24-hour,
+  converted from the current clock). CURRENT_STATE.md explicitly selects the latest handoff and prompt;
+  filename order alone does not establish integration order, particularly with legacy numbered files.
+- Capture one timestamp for each handoff/prompt pair. If a filename exists, use a distinct agent/session
+  label in both names (e.g. codex-session2); never overwrite a prior artifact. Preserve legacy files.
+- Record the producing agent, its completed work, outstanding concerns, and suggested next actions.
+- Link to the matching next-agent prompt in prompts/.
+
+**prompts/**
+- The copy-paste context-switching prompts for starting the next session, one file per handoff,
+  named YYYY-MM-DD_HHMM_<agent>_next.md with the same timestamp as its handoff.
+- Each file says when it was created, by whom, which handoff it belongs to, and what the next agent should look at.
+
+**reviews/**
+- Findings from independent code reviews, named YYYY-MM-DD_HHMM_<reviewer>_review-<what>.md.
+- Bugs, architectural concerns, suggestions, fixes, and verification results.
+
+Keep this structure simple. Do not create an unnecessary orchestration framework, database, server, dashboard, or automation infrastructure.
+
+## 4. Phase Two — When the Hackathon Theme Is Announced
+
+When I provide the official theme, follow this procedure.
+
+### Step A — Understand the problem
+
+Read the theme carefully and identify:
+- What problem we need to solve.
+- Mandatory requirements and technologies.
+- How the proposed solution assists with the SDLC.
+- Evaluation criteria.
+- Time and resource constraints.
+- Ambiguities requiring human decisions.
+
+Record the official information in THEME.md.
+
+### Step B — Brainstorming
+
+Before writing application code, propose several realistic ideas that could be implemented within our two-hour hackathon.
+
+For each idea, explain:
+- What the application does.
+- Which SDLC problem it solves.
+- Its main features.
+- Technologies and integrations needed.
+- Implementation complexity.
+- Expected demo value.
+- Major technical risks.
+
+Recommend the strongest options and explain why.
+
+### Step C — Cross-model brainstorming
+
+Other LLMs will be brought into the discussion manually.
+
+When I instruct you to examine another agent's suggestions:
+
+1. Read its ideas and reasoning.
+2. Independently evaluate their strengths and weaknesses.
+3. Identify implementation risks or missing requirements.
+4. Suggest better approaches where appropriate.
+5. Add your recommendations to IDEAS.md.
+6. Explain your findings to me.
+
+Do not automatically accept another LLM's suggestions.
+
+Do not discard previous suggestions without documenting why.
+
+### Step D — Human decision
+
+**DO NOT begin implementing the main project until a human participant explicitly selects the idea and authorizes development.**
+
+Once we choose an idea, record that choice in DECISIONS.md.
+
+Treat the selected idea as the approved direction. Do not repeatedly reopen the same decision unless a significant technical blocker or new requirement appears.
+
+## 5. Phase Three — Architecture and Task Planning
+
+After we approve a project idea, the LLMs should help determine how to build it.
+
+Each model may examine the current plan and recommend improvements.
+
+Prepare a practical implementation plan that identifies:
+- Minimum viable product.
+- Main components and how they communicate.
+- Technologies and dependencies.
+- Implementation tasks.
+- Integration and testing requirements.
+- Essential versus optional features.
+- Tasks that could run simultaneously.
+
+**Avoid overengineering. We have only two hours.**
+
+Prioritize a working, demonstrable application.
+
+### Dynamic task allocation
+
+Do not permanently assign frontend, backend, testing, or other roles to particular LLMs.
+
+Instead, recommend which tasks can run independently and which require sequential work.
+
+I will decide which model receives each task.
+
+If simultaneous development is approved, clearly establish file ownership, component interfaces, and integration expectations before work begins.
+
+Use TASK_BOARD.md to claim files before editing. IN PROGRESS, BLOCKED, and IN REVIEW retain claims;
+DONE releases them. Interrupted claims remain until explicitly released or reassigned by a human.
+Record each task's acceptance check, blocker (if any), and exact next action in its notes.
+Append-only text is not a lock. For parallel work, humans designate one writer for shared documents
+(task board, current state, decisions, idea index); other agents contribute in distinct assigned files.
+
+Where necessary, use separate Git branches or worktrees to avoid conflicting modifications.
+Concurrent code work needs separate checkouts/worktrees: branches in a single shared directory do
+not isolate edits. Do not switch its branch while another agent is using it. Across machines, humans
+authorize commits/pushes to exchange work; record the base commit and integration responsibility.
+
+Do not independently create parallel workflows or delegate tasks to other agents unless instructed.
+
+## 6. Phase Four — Development
+
+When I assign you a development task:
+
+1. Read AGENTS.md and the relevant shared project documents.
+2. Inspect the current codebase and any uncommitted changes.
+3. Read the latest relevant agent handoff.
+4. Understand what previous agents implemented.
+5. Review the relevant implementation for errors or missing functionality.
+6. Briefly explain what you intend to implement or improve.
+7. Carry out the assigned work, respecting previously approved decisions.
+8. Run relevant tests or checks whenever possible.
+9. Update the shared project state and task board.
+10. Create your handoff before finishing.
+
+Check Git state for documentation sessions too. If Git is not initialized or has no commits, record
+that limitation and continue authorized work. Read handoffs relevant to the assignment; do not follow
+every historical reference recursively. Inspect interrupted work before resuming it.
+
+You may implement improvements within the task I assigned.
+
+However, ask for approval before making major changes to architecture, scope, chosen technologies, or previously approved decisions.
+
+Never overwrite another agent's work blindly.
+
+Do not assume that code written by another LLM is correct.
+
+## 7. Phase Five — Cross-Agent Review
+
+I may instruct you:
+
+"Review what Claude did."
+
+"Look at Codex's latest implementation."
+
+"Review the other model's work and make improvements."
+
+When receiving these instructions:
+
+1. Read the relevant handoffs.
+2. Inspect the actual source code and changes.
+3. Compare the implementation against the approved requirements.
+4. Identify bugs, omissions, poor assumptions, unnecessary complexity, and integration problems.
+5. Verify issues using tests or direct examination where possible.
+6. Explain your findings and proposed actions to me.
+7. Make fixes within the scope I authorize.
+8. Avoid undoing valid work simply because you prefer a different implementation.
+9. Record your findings, fixes, and remaining concerns.
+10. Produce an updated handoff.
+
+Critically evaluate other agents' work without assuming either that it is correct or that it must be changed.
+
+A review must add value, not generate unnecessary rewrites.
+
+Keep reviews focused because of the hackathon time limit.
+
+## 8. Mandatory Handoff Protocol
+
+Every time you complete a substantial planning, development, testing, or review session, write a handoff file.
+
+Use this format:
+
+```markdown
+# Agent Handoff
+
+Agent:
+Session:
+Phase:
+Task:
+Workspace / branch / base commit: <path and refs, or not initialized>
+
+## Original Objective
+What I was asked to do.
+
+## Work Completed
+What I actually accomplished.
+
+## Files Changed
+Files created or modified and why.
+
+## Technical Decisions
+Important implementation choices and reasoning.
+
+## Review Findings
+Bugs, concerns, or improvements identified.
+
+## Validation
+Tests or checks performed and their results.
+Clearly state anything not tested.
+
+## Current Project Status
+What is working and what remains incomplete.
+
+## Pending Tasks
+Specific unfinished work.
+
+## Recommendations
+What I believe should happen next, and why.
+
+## Human Decisions Required
+Anything that requires approval.
+
+## Suggested Prompt for the Next Agent
+Link to the prompt file in .hackathon/prompts/ (same timestamp).
+```
+
+Save the handoff as .hackathon/handoffs/YYYY-MM-DD_HHMM_<agent>_<topic>.md and the next-agent prompt as
+.hackathon/prompts/YYYY-MM-DD_HHMM_<agent>_next.md (a clear, copy-paste-ready instruction that tells
+another LLM how to pick up the project).
+
+Do not merely claim that a task was completed. Document actual changes and validation results.
+Keep sections brief and link to existing detail. Include reproducible validation commands, uncommitted
+files left behind, and claims retained/released. Keep prompt text in prompts/ only and link to it from
+the handoff. The prompt must match the actual phase and cannot grant development authorization.
+
+The suggested prompt must refer to the shared project files so that it works for Claude, Codex, or another capable LLM.
+
+Do not assume which model will work next.
+
+Update CURRENT_STATE.md to identify the latest handoff and its prompt file.
+Update both pointers together after the two files exist. During parallel work, only the designated
+shared-document writer updates these pointers. The current human assignment takes priority over
+suggestions in a saved prompt.
+
+**A handoff is not permission to automatically start another agent. I will initiate every handoff manually.**
+
+## 9. Git and Project History
+
+We want the final Git repository to preserve both the application and the documented collaboration history.
+
+This includes:
+- Source code.
+- Project instructions.
+- Hackathon theme.
+- Brainstorming suggestions.
+- Human decisions.
+- Architecture and implementation plans.
+- Task assignments.
+- Agent handoffs.
+- Code review findings.
+- Development documentation.
+
+Git operator: only Codex runs Git write commands (init, add, commit, branch, pull, push), and only
+when a human instructs it. Every other agent may read Git state (status, log, diff) but must not
+change it. When another agent thinks a commit, pull or push is due, it tells the human and records
+the request, with the files to include, under "Human Decisions Required" in its handoff.
+
+When I instruct you (Codex) to commit, pull or push the project:
+
+1. Inspect the current Git status and changes.
+2. Verify that important documentation and handoffs are updated.
+3. Check for secrets, credentials, tokens, sensitive files, and unnecessary generated artifacts.
+4. Stage the intended files.
+5. Create meaningful commits when requested.
+6. Push only when explicitly instructed, to the approved remote and branch.
+7. Report the outcome, including any failures.
+
+Do not automatically push after every development session.
+
+Preserve existing Git history. Never force-push, discard uncommitted work, or rewrite history without explicit approval.
+
+Handoff documents are the documented collaboration record. Do not claim that they contain complete chat histories unless those histories have actually been captured.
+
+## 10. Operating Rules for Every LLM
+
+All participating agents must follow these rules:
+
+1. **Human authority:** The two human participants make final decisions.
+2. **Shared context:** Always consult project files rather than relying on past conversations.
+3. **Interchangeability:** No permanent model-specific engineering roles.
+4. **Independent evaluation:** Review previous agents' work critically.
+5. **Accurate reporting:** Never claim unperformed tests or unverified results.
+6. **Persistent handoffs:** Document completed work and next steps.
+7. **Decision continuity:** Respect previously approved decisions.
+8. **Minimal overhead:** Avoid lengthy debates, redundant documentation, and unnecessary architecture.
+9. **Safe collaboration:** Prevent simultaneous agents from accidentally modifying the same files.
+10. **Human-controlled Git:** Push only when instructed.
+11. **Transparency:** Clearly distinguish completed, partially completed, blocked, and proposed work.
+12. **No automatic agent communication:** Never assume you can contact or control the other three LLMs.
+
+The goal is not to make
